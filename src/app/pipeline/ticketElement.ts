@@ -7,4 +7,5 @@ export interface TicketElement {
   labelbg: string;
   product: string;
   date: string;
+  imagePath?: string;
 }

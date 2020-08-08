@@ -1,49 +1,62 @@
 <div fxLayout="row wrap">
   <!-- column -->
-  <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+  <div fxFlex.gt-sm="20" fxFlex.gt-xs="100" fxFlex="100">
     <mat-card>
       <div class="box p-20 bg-info text-center" (click)="btnCategoryClick('')">
         <h1 class="font-light text-white m-0">{{ totalCount }}</h1>
-        <h6 class="text-white m-0">Total Tickets</h6>
+        <h6 class="text-white m-0">Total Contracts</h6>
       </div>
     </mat-card>
   </div>
   <!-- column -->
   <!-- column -->
-  <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+  <div fxFlex.gt-sm="20" fxFlex.gt-xs="100" fxFlex="100">
     <mat-card>
       <div
         class="box p-20 bg-warning text-center"
         (click)="btnCategoryClick('In Progress')"
       >
         <h1 class="font-light text-white m-0">{{ Inprogress }}</h1>
-        <h6 class="text-white m-0">In Progress</h6>
+        <h6 class="text-white m-0">Pending Install</h6>
       </div>
     </mat-card>
   </div>
   <!-- column -->
   <!-- column -->
-  <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+  <div fxFlex.gt-sm="20" fxFlex.gt-xs="100" fxFlex="100">
     <mat-card>
       <div
         class="box p-20 bg-success text-center"
         (click)="btnCategoryClick('Open')"
       >
         <h1 class="font-light text-white m-0">{{ Open }}</h1>
-        <h6 class="text-white m-0">Open</h6>
+        <h6 class="text-white m-0">In Queue</h6>
       </div>
     </mat-card>
   </div>
   <!-- column -->
   <!-- column -->
-  <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+  <div fxFlex.gt-sm="20" fxFlex.gt-xs="100" fxFlex="100">
     <mat-card>
       <div
         class="box p-20 bg-danger text-center"
         (click)="btnCategoryClick('Closed')"
       >
         <h1 class="font-light text-white m-0">{{ Closed }}</h1>
-        <h6 class="text-white m-0">Closed</h6>
+        <h6 class="text-white m-0">On Hold</h6>
+      </div>
+    </mat-card>
+  </div>
+  <!-- column -->
+  <!-- column -->
+  <div fxFlex.gt-sm="20" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card>
+      <div
+        class="box p-20 bg-purple text-center"
+        (click)="btnCategoryClick('Closed')"
+      >
+        <h1 class="font-light text-white m-0">{{ Closed }}</h1>
+        <h6 class="text-white m-0">All Clients</h6>
       </div>
     </mat-card>
   </div>
@@ -85,15 +98,28 @@
           <table
             mat-table
             [dataSource]="dataSource"
-            class="table  ticket-list no-wrap"
+            class="table  pipeline-client-list no-wrap"
           >
             <ng-container matColumnDef="creator">
               <th mat-header-cell *matHeaderCellDef>Creator</th>
-              <td mat-cell *matCellDef="let element">{{ element.creator }}</td>
+              <td mat-cell *matCellDef="let element">
+                <div class="d-flex">
+                  <img class="mat-card-avatar" [src]="element.imagePath" />
+                  <div class="m-l-15">
+                    <p class="font-bold m-b-0 m-t-0">{{ element.creator }}</p>
+                    <small>{{ element.title }}</small>
+                  </div>
+                </div>
+              </td>
             </ng-container>
 
+            <!-- <ng-container matColumnDef="creator">
+              <th mat-header-cell *matHeaderCellDef>Creator</th>
+              <td mat-cell *matCellDef="let element">{{ element.creator }}</td>
+            </ng-container> -->
+
             <ng-container matColumnDef="title">
-              <th mat-header-cell *matHeaderCellDef>Title</th>
+              <th mat-header-cell *matHeaderCellDef>Description</th>
               <td mat-cell *matCellDef="let element">{{ element.title }}</td>
             </ng-container>
 
@@ -104,20 +130,27 @@
 
             <ng-container matColumnDef="status">
               <th mat-header-cell *matHeaderCellDef>Status</th>
-              <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+              <!-- <td mat-cell *matCellDef="let element">{{ element.status }}</td> -->
+              <td mat-cell *matCellDef="let element">
+                <mat-progress-bar
+                  color="warn"
+                  mode="determinate"
+                  value="60"
+                ></mat-progress-bar>
+              </td>
             </ng-container>
 
             <ng-container matColumnDef="product">
-              <th mat-header-cell *matHeaderCellDef>Product</th>
+              <th mat-header-cell *matHeaderCellDef>Site Survew</th>
               <td mat-cell *matCellDef="let element">{{ element.product }}</td>
             </ng-container>
 
             <ng-container matColumnDef="date">
-              <th mat-header-cell *matHeaderCellDef>Date</th>
+              <th mat-header-cell *matHeaderCellDef>Installation</th>
               <td mat-cell *matCellDef="let element">{{ element.date }}</td>
             </ng-container>
 
-            <ng-container matColumnDef="action">
+            <!-- <ng-container matColumnDef="action">
               <th mat-header-cell *matHeaderCellDef>Action</th>
               <td mat-cell *matCellDef="let element" class="action-link">
                 <a
@@ -132,7 +165,7 @@
                   <i class="fa fa-trash text-danger"></i>
                 </a>
               </td>
-            </ng-container>
+            </ng-container> -->
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>

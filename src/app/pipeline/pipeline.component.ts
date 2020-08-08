@@ -17,7 +17,8 @@ const tickets: TicketElement[] = [
     status: 'In Progress',
     labelbg: 'warning',
     product: 'Elegant Admin',
-    date: '2018-05-01'
+    date: '2018-05-01',
+    imagePath: 'assets/images/users/2.jpg'
   },
   {
     id: 78,
@@ -27,7 +28,8 @@ const tickets: TicketElement[] = [
     status: 'Open',
     labelbg: 'success',
     product: 'Xtreme Admin',
-    date: '2018-05-03'
+    date: '2018-05-03',
+    imagePath: 'assets/images/users/4.jpg'
   },
   {
     id: 79,
@@ -37,7 +39,8 @@ const tickets: TicketElement[] = [
     status: 'Closed',
     labelbg: 'danger',
     product: 'Material Admin',
-    date: '2018-05-02'
+    date: '2018-05-02',
+    imagePath: 'assets/images/users/3.jpg'
   },
   {
     id: 80,
@@ -47,7 +50,8 @@ const tickets: TicketElement[] = [
     status: 'In Progress',
     labelbg: 'warning',
     product: 'Nice Admin',
-    date: '2018-05-06'
+    date: '2018-05-06',
+    imagePath: 'assets/images/users/5.jpg'
   },
   {
     id: 81,
@@ -57,7 +61,8 @@ const tickets: TicketElement[] = [
     status: 'Open',
     labelbg: 'success',
     product: 'Elagant Admin',
-    date: '2018-05-04'
+    date: '2018-05-04',
+    imagePath: 'assets/images/users/6.jpg'
   },
   {
     id: 82,
@@ -67,7 +72,8 @@ const tickets: TicketElement[] = [
     status: 'Closed',
     labelbg: 'danger',
     product: 'Adminpro Admin',
-    date: '2018-05-03'
+    date: '2018-05-03',
+    imagePath: 'assets/images/users/7.jpg'
   },
   {
     id: 83,
@@ -77,7 +83,8 @@ const tickets: TicketElement[] = [
     status: 'In Progress',
     labelbg: 'warning',
     product: 'Elegant Admin',
-    date: '2018-05-05'
+    date: '2018-05-05',
+    imagePath: 'assets/images/users/3.jpg'
   },
   {
     id: 84,
@@ -87,7 +94,8 @@ const tickets: TicketElement[] = [
     status: 'Open',
     labelbg: 'success',
     product: 'Adminpress Admin',
-    date: '2018-05-04'
+    date: '2018-05-04',
+    imagePath: 'assets/images/users/6.jpg'
   },
   {
     id: 85,
@@ -97,7 +105,8 @@ const tickets: TicketElement[] = [
     status: 'Closed',
     labelbg: 'danger',
     product: 'Xtreme Admin',
-    date: '2018-05-02'
+    date: '2018-05-02',
+    imagePath: 'assets/images/users/5.jpg'
   },
   {
     id: 86,
@@ -107,11 +116,13 @@ const tickets: TicketElement[] = [
     status: 'Closed',
     labelbg: 'danger',
     product: 'Material Admin',
-    date: '2018-05-03'
+    date: '2018-05-03',
+    imagePath: 'assets/images/users/8.jpg'
   }
 ];
 @Component({
-  templateUrl: './pipeline.component.html'
+  templateUrl: './pipeline.component.html',
+  styleUrls: ['./pipeline.component.scss']
 })
 export class PipelineComponent implements OnInit {
   @ViewChild(MatTable, { static: true }) table: MatTable<any> = Object.create(
@@ -130,8 +141,7 @@ export class PipelineComponent implements OnInit {
     'assignee',
     'status',
     'product',
-    'date',
-    'action'
+    'date'
   ];
   dataSource = new MatTableDataSource(tickets);
 
