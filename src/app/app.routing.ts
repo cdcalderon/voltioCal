@@ -9,7 +9,7 @@ export const AppRoutes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: '/pipeline',
+        redirectTo: 'pipeline',
         pathMatch: 'full'
       },
       {

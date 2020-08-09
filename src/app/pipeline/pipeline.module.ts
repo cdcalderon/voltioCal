@@ -6,6 +6,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { PipelineComponent } from './pipeline.component';
 import { PipelineRoutes } from './pipeline.routing';
 import { TicketDialogContent } from './dialog-content.component';
+import { PipelineContractDetailComponent } from './pipeline-contract-detail/pipeline-contract-detail.component';
+import { PipelineOverviewComponent } from './pipeline-overview/pipeline-overview.component';
 
 @NgModule({
   imports: [
@@ -14,7 +16,12 @@ import { TicketDialogContent } from './dialog-content.component';
     FlexLayoutModule,
     RouterModule.forChild(PipelineRoutes)
   ],
-  declarations: [PipelineComponent, TicketDialogContent],
+  declarations: [
+    PipelineComponent,
+    TicketDialogContent,
+    PipelineContractDetailComponent,
+    PipelineOverviewComponent
+  ],
   entryComponents: [TicketDialogContent]
 })
 export class PipelineModule {}
