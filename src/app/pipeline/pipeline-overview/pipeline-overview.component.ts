@@ -16,7 +16,7 @@ const tickets: TicketElement[] = [
     assignee: 'Alice Bohr',
     status: 'In Progress',
     labelbg: 'warning',
-    product: 'Elegant Admin',
+    product: '2018-04-01',
     date: '2018-05-01',
     imagePath: 'assets/images/users/2.jpg'
   },
@@ -27,7 +27,7 @@ const tickets: TicketElement[] = [
     assignee: 'Jonathan',
     status: 'Open',
     labelbg: 'success',
-    product: 'Xtreme Admin',
+    product: '2018-04-03',
     date: '2018-05-03',
     imagePath: 'assets/images/users/4.jpg'
   },
@@ -38,7 +38,7 @@ const tickets: TicketElement[] = [
     assignee: 'Smith J',
     status: 'Closed',
     labelbg: 'danger',
-    product: 'Material Admin',
+    product: '2018-04-02',
     date: '2018-05-02',
     imagePath: 'assets/images/users/3.jpg'
   },
@@ -49,7 +49,7 @@ const tickets: TicketElement[] = [
     assignee: 'Vincent',
     status: 'In Progress',
     labelbg: 'warning',
-    product: 'Nice Admin',
+    product: '2018-04-06',
     date: '2018-05-06',
     imagePath: 'assets/images/users/5.jpg'
   },
@@ -60,7 +60,7 @@ const tickets: TicketElement[] = [
     assignee: 'Chris Martin',
     status: 'Open',
     labelbg: 'success',
-    product: 'Elagant Admin',
+    product: '2018-04-04',
     date: '2018-05-04',
     imagePath: 'assets/images/users/6.jpg'
   },
@@ -71,7 +71,7 @@ const tickets: TicketElement[] = [
     assignee: 'James F',
     status: 'Closed',
     labelbg: 'danger',
-    product: 'Adminpro Admin',
+    product: '2018-03-03',
     date: '2018-05-03',
     imagePath: 'assets/images/users/7.jpg'
   },
@@ -82,7 +82,7 @@ const tickets: TicketElement[] = [
     assignee: 'Jonathan',
     status: 'In Progress',
     labelbg: 'warning',
-    product: 'Elegant Admin',
+    product: '2018-02-05',
     date: '2018-05-05',
     imagePath: 'assets/images/users/3.jpg'
   },
@@ -93,7 +93,7 @@ const tickets: TicketElement[] = [
     assignee: 'Smith J',
     status: 'Open',
     labelbg: 'success',
-    product: 'Adminpress Admin',
+    product: '2018-02-04',
     date: '2018-05-04',
     imagePath: 'assets/images/users/6.jpg'
   },
@@ -104,7 +104,7 @@ const tickets: TicketElement[] = [
     assignee: 'Markus',
     status: 'Closed',
     labelbg: 'danger',
-    product: 'Xtreme Admin',
+    product: '2018-03-02',
     date: '2018-05-02',
     imagePath: 'assets/images/users/5.jpg'
   },
@@ -115,7 +115,7 @@ const tickets: TicketElement[] = [
     assignee: 'Jane',
     status: 'Closed',
     labelbg: 'danger',
-    product: 'Material Admin',
+    product: '2018-01-03',
     date: '2018-05-03',
     imagePath: 'assets/images/users/8.jpg'
   }

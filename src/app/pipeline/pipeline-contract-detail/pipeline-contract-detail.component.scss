@@ -180,3 +180,29 @@ Timeline page
     border-left-width: 0;
   }
 }
+
+.little-profile {
+  .pro-img,
+  .pro-img:first-child {
+    margin-top: -100px;
+    margin-bottom: 20px;
+    img {
+      width: 128px;
+      height: 128px;
+      -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      border-radius: 100%;
+    }
+  }
+}
+
+// accordion styles
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}

@@ -53,9 +53,9 @@
     <mat-card>
       <div
         class="box p-20 bg-purple text-center"
-        (click)="btnCategoryClick('Closed')"
+        (click)="btnCategoryClick('')"
       >
-        <h1 class="font-light text-white m-0">{{ Closed }}</h1>
+        <h1 class="font-light text-white m-0">{{ totalCount }}</h1>
         <h6 class="text-white m-0">All Clients</h6>
       </div>
     </mat-card>
@@ -82,7 +82,7 @@
               (click)="openDialog('Add', {})"
               color="primary"
             >
-              Add Ticket
+              Add Contract
             </button>
           </div>
         </div>
@@ -141,7 +141,7 @@
             </ng-container>
 
             <ng-container matColumnDef="product">
-              <th mat-header-cell *matHeaderCellDef>Site Survew</th>
+              <th mat-header-cell *matHeaderCellDef>Site Survey</th>
               <td mat-cell *matCellDef="let element">{{ element.product }}</td>
             </ng-container>
 
@@ -149,26 +149,13 @@
               <th mat-header-cell *matHeaderCellDef>Installation</th>
               <td mat-cell *matCellDef="let element">{{ element.date }}</td>
             </ng-container>
-
-            <!-- <ng-container matColumnDef="action">
-              <th mat-header-cell *matHeaderCellDef>Action</th>
-              <td mat-cell *matCellDef="let element" class="action-link">
-                <a
-                  (click)="openDialog('Update', element)"
-                  class="m-r-10 cursor-pointer"
-                  ><i class="fa fa-pencil"></i
-                ></a>
-                <a
-                  (click)="openDialog('Delete', element)"
-                  class="m-r-10 cursor-pointer"
-                >
-                  <i class="fa fa-trash text-danger"></i>
-                </a>
-              </td>
-            </ng-container> -->
-
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            <tr
+              mat-row
+              *matRowDef="let row; columns: displayedColumns"
+              routerLink="/pipeline/contract/3"
+              routerLinkActive="router-link-active"
+            ></tr>
           </table>
         </div>
       </mat-card-content>

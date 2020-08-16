@@ -6,10 +6,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pipeline-contract-detail.component.scss']
 })
 export class PipelineContractDetailComponent implements OnInit {
+  reps: string[] = ['rep1', 'rep2'];
 
-  constructor() { }
+  panelOpenState = false;
+  step = 0;
 
-  ngOnInit(): void {
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  setStep(index: number) {
+    this.step = index;
   }
 
+  nextStep() {
+    this.step++;
+  }
+
+  prevStep() {
+    this.step--;
+  }
 }

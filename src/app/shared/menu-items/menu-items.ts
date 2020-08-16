@@ -39,7 +39,7 @@ const MENUITEMS = [
   },
   {
     state: 'material',
-    name: 'Material Ui',
+    name: 'Proposal',
     type: 'sub',
     icon: 'bubble_chart',
     badge: [{ type: 'red', value: '17' }],

@@ -8,9 +8,8 @@ describe('PipelineOverviewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PipelineOverviewComponent ]
-    })
-    .compileComponents();
+      declarations: [PipelineOverviewComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
