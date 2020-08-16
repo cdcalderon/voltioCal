@@ -35,11 +35,17 @@ const MENUITEMS = [
     state: 'pipeline',
     name: 'Pipeline',
     type: 'link',
-    icon: 'content_copy'
+    icon: 'linear_scale'
+  },
+  {
+    state: 'proposal',
+    name: 'Proposal',
+    type: 'link',
+    icon: 'description'
   },
   {
     state: 'material',
-    name: 'Proposal',
+    name: 'Material',
     type: 'sub',
     icon: 'bubble_chart',
     badge: [{ type: 'red', value: '17' }],

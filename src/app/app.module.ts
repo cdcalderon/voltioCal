@@ -16,7 +16,6 @@ import { AppBreadcrumbComponent } from './layouts/full/breadcrumb/breadcrumb.com
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule } from './demo-material-module';
 
-
 import { SharedModule } from './shared/shared.module';
 import { SpinnerComponent } from './shared/spinner.component';
 
@@ -32,13 +31,13 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
 @NgModule({
   declarations: [
-  AppComponent,
-  FullComponent,
-  AppHeaderComponent,
-  AppBlankComponent,
-  SpinnerComponent,
-  AppSidebarComponent,
-	AppBreadcrumbComponent
+    AppComponent,
+    FullComponent,
+    AppHeaderComponent,
+    AppBlankComponent,
+    SpinnerComponent,
+    AppSidebarComponent,
+    AppBreadcrumbComponent
   ],
   imports: [
     BrowserModule,

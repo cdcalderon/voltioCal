@@ -1,0 +1,215 @@
+<div fxLayout="row wrap">
+  <!-- column -->
+  <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card class="bg-info">
+      <mat-card-content>
+        <!-- column -->
+        <div class="d-flex no-block align-items-center">
+          <div class="stats">
+            <h3 class="text-white m-0">Leads</h3>
+            <h1 class="text-white m-0">45</h1>
+          </div>
+          <div class="ml-auto text-white" style="height: 84px; width: 100px">
+            <mat-icon>star_outline</mat-icon>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!-- column -->
+  <!-- column -->
+  <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card class="bg-purple">
+      <mat-card-content>
+        <!-- column -->
+        <div class="d-flex no-block align-items-center">
+          <div class="stats">
+            <h3 class="text-white m-0">Messages</h3>
+            <h1 class="text-white m-0">77</h1>
+          </div>
+          <div class="ml-auto text-white" style="height: 84px; width: 100px">
+            <mat-icon>message</mat-icon>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!-- column -->
+  <!-- column -->
+  <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card class="bg-success">
+      <mat-card-content>
+        <!-- column -->
+        <div class="d-flex no-block align-items-center">
+          <div class="stats">
+            <h3 class="text-white m-0">Calendar</h3>
+            <h1 class="text-white m-0">8</h1>
+          </div>
+          <div class="ml-auto text-white" style="height: 84px; width: 100px">
+            <mat-icon>calendar_today</mat-icon>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!-- column -->
+  <!-- column -->
+  <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card class="bg-warning">
+      <mat-card-content>
+        <!-- column -->
+        <div class="d-flex no-block align-items-center">
+          <div class="stats">
+            <h3 class="text-white m-0">Project</h3>
+            <h1 class="text-white m-0">5</h1>
+          </div>
+          <div class="ml-auto text-white" style="height: 84px; width: 100px">
+            <mat-icon>assignment_turned_in</mat-icon>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!-- column -->
+
+  <!-- column -->
+</div>
+
+<div fxLayout="row wrap">
+  <!-- column -->
+  <div fxFlex.gt-md="33.33" fxFlex.gt-xs="100" fxFlex="100">
+    <div fxLayout="row wrap">
+      <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+        <mat-card class="bg-success">
+          <mat-card-content>
+            <!-- column -->
+            <div class="d-flex p-t-20 p-b-20 no-block align-items-center">
+              <div class="stats">
+                <h3 class="text-white m-0">Proposals %</h3>
+                <h6 class="text-white m-t-0"></h6>
+                <h1 class="text-white m-0">13%</h1>
+              </div>
+              <div class="ml-auto" style="height: 84px; width: 100px">
+                <canvas
+                  baseChart
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [colors]="barChartColors"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType"
+                >
+                </canvas>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <div fxLayout="row wrap">
+      <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+        <mat-card class="bg-purple">
+          <mat-card-content>
+            <!-- column -->
+            <div class="d-flex p-t-20 p-b-20 no-block align-items-center">
+              <div class="stats">
+                <h3 class="text-white m-0">Leads %</h3>
+                <h6 class="text-white m-t-0"></h6>
+                <h1 class="text-white m-0">35%</h1>
+              </div>
+              <div class="ml-auto" style="height: 84px; width: 100px">
+                <canvas
+                  baseChart
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [colors]="barChartColors"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType"
+                >
+                </canvas>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  <!-- column -->
+  <!-- column -->
+  <div fxFlex.gt-md="33.33" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <!-- column -->
+        <mat-card-title>Leads / Proposal</mat-card-title>
+        <mat-card-subtitle>Leads / Proposal relationship</mat-card-subtitle>
+        <div class="text-center">
+          <div id="visitor-chart">
+            <apx-chart
+              [series]="VisitorChartOptions.series"
+              [chart]="VisitorChartOptions.chart"
+              [labels]="VisitorChartOptions.labels"
+              [responsive]="VisitorChartOptions.responsive"
+              [tooltip]="VisitorChartOptions.tooltip"
+              [legend]="VisitorChartOptions.legend"
+              [colors]="VisitorChartOptions.colors"
+              [dataLabels]="VisitorChartOptions.dataLabels"
+              [plotOptions]="VisitorChartOptions.plotOptions"
+              [stroke]="VisitorChartOptions.stroke"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </mat-card-content>
+      <hr />
+      <mat-card-content>
+        <ul class="list-inline text-center">
+          <li>
+            <h6 class="text-muted text-success m-0">
+              <i class="fa fa-circle font-10 m-r-10 "></i>Proposals
+            </h6>
+          </li>
+          <li>
+            <h6 class="text-muted  text-info  m-0">
+              <i class="fa fa-circle font-10 m-r-10"></i>Leads
+            </h6>
+          </li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!-- column -->
+  <!-- column -->
+  <div fxFlex.gt-md="33.33" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <!-- column -->
+        <mat-card-title>Proposals Yearly</mat-card-title>
+        <mat-card-subtitle>Proposal........... tbd message</mat-card-subtitle>
+        <div id="chart">
+          <apx-chart
+            [series]="chartOptions.series"
+            [chart]="chartOptions.chart"
+            [dataLabels]="chartOptions.dataLabels"
+            [plotOptions]="chartOptions.plotOptions"
+            [yaxis]="chartOptions.yaxis"
+            [legend]="chartOptions.legend"
+            [fill]="chartOptions.fill"
+            [stroke]="chartOptions.stroke"
+            [tooltip]="chartOptions.tooltip"
+            [xaxis]="chartOptions.xaxis"
+            [grid]="chartOptions.grid"
+          >
+          </apx-chart>
+        </div>
+        <!-- <div class="barchrt" style="height:325px;">
+                  <x-chartist class="" [data]="barChart1.data" [type]="barChart1.type" [options]="barChart1.options"
+                      [responsiveOptions]="barChart1.responsiveOptions" [events]="barChart1.events"> </x-chartist>
+              </div> -->
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!-- column -->
+
+  <!-- column -->
+</div>

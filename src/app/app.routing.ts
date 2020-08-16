@@ -23,6 +23,11 @@ export const AppRoutes: Routes = [
         path: 'pipeline',
         loadChildren: () =>
           import('./pipeline/pipeline.module').then(m => m.PipelineModule)
+      },
+      {
+        path: 'proposal',
+        loadChildren: () =>
+          import('./proposals/proposals.module').then(m => m.ProposalsModule)
       }
     ]
   }
