@@ -25,6 +25,7 @@ import { ProposalComponent } from './proposal.component';
 import { ProposalListComponent } from './proposal-list/proposal-list.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { CreateProposalComponent } from './create-proposal/create-proposal.component';
+import { CourseService } from './proposal-list/course.service';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { CreateProposalComponent } from './create-proposal/create-proposal.compo
     NgxPaginationModule,
     RouterModule.forChild(ProposalRoutes)
   ],
+  providers: [CourseService],
   entryComponents: [DialogContent]
 })
 export class ProposalsModule {}
