@@ -1,0 +1,229 @@
+<div fxLayout="row wrap">
+  <!-- Card column -->
+  <div fxFlex.gt-sm="100%" fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <mat-card-title class="p-b-20">Create Proposal</mat-card-title>
+
+        <button
+          mat-raised-button
+          (click)="isLinear = !isLinear"
+          id="toggle-linear"
+        >
+          {{ !isLinear ? "Enable linear mode" : "Disable linear mode" }}
+        </button>
+        <mat-vertical-stepper [linear]="isLinear" #stepper>
+          <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+              <ng-template matStepLabel>Energy Consumption</ng-template>
+              <mat-form-field>
+                <mat-select placeholder="Select Utility Name">
+                  <mat-option *ngFor="let util of utilities" [value]="util">
+                    {{ util }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-select placeholder="Select Rate Schedule">
+                  <mat-option *ngFor="let rate of rates" [value]="rate">
+                    {{ rate }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <div
+                fxLayout="row"
+                fxLayoutWrap="wrap"
+                class="m-t-10"
+                *ngFor="let month of months"
+              >
+                <div
+                  fxFlex.gt-sm="15%"
+                  fxFlex.gt-xs="15%"
+                  fxFlex="100"
+                  style="margin-right: 20px"
+                >
+                  <div fxFlex.gt-md="100" fxFlex="100">
+                    <div class="p-t-20">
+                      {{ month }}
+                    </div>
+                  </div>
+                </div>
+                <div fxFlex.gt-sm="42%" fxFlex.gt-xs="42%" fxFlex="100">
+                  <div fxFlex.gt-md="100" fxFlex="100">
+                    <mat-form-field>
+                      <input matInput placeholder="KWH" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div fxFlex.gt-sm="42%" fxFlex.gt-xs="42%" fxFlex="100">
+                  <div fxFlex.gt-md="100" fxFlex="100">
+                    <mat-form-field>
+                      <input matInput placeholder="$" />
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+
+              <div fxLayout="row" fxLayoutWrap="wrap" class="m-t-10">
+                <button
+                  color="primary"
+                  fxFlex="100"
+                  mat-raised-button
+                  (click)="isLinear = !isLinear"
+                  id="toggle-linear"
+                >
+                  Calculate
+                </button>
+              </div>
+
+              <mat-card-title class="p-t-20 text-center"
+                >Consumption Summary</mat-card-title
+              >
+
+              <div fxLayout="row wrap">
+                <!-- column -->
+                <div fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+                  <a href="javascript:void">
+                    <mat-card class="bg-info text-white text-center">
+                      <div class="p-10">
+                        <h2 class="m-0">$20</h2>
+                        <small>Average Montly Bill</small>
+                      </div>
+                    </mat-card>
+                  </a>
+                </div>
+                <!-- column -->
+                <div fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+                  <a href="javascript:void">
+                    <mat-card class="bg-purple text-white text-center">
+                      <div class="p-10">
+                        <h2 class="m-0">$0.33Kwh</h2>
+                        <small>Average Electric Price</small>
+                      </div>
+                    </mat-card>
+                  </a>
+                </div>
+              </div>
+
+              <div>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+              <ng-template matStepLabel>Property Details</ng-template>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Address"
+                  formControlName="secondCtrl"
+                  required
+                />
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+              <ng-template matStepLabel>Project Details</ng-template>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Address"
+                  formControlName="secondCtrl"
+                  required
+                />
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+              <ng-template matStepLabel>Finance Details</ng-template>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Address"
+                  formControlName="secondCtrl"
+                  required
+                />
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+              <ng-template matStepLabel>Complete Agreements</ng-template>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Address"
+                  formControlName="secondCtrl"
+                  required
+                />
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+              <ng-template matStepLabel>Schedule Inspection</ng-template>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Address"
+                  formControlName="secondCtrl"
+                  required
+                />
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+              <ng-template matStepLabel>Upload Documents</ng-template>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Address"
+                  formControlName="secondCtrl"
+                  required
+                />
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            You are now done.
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button (click)="stepper.reset()">Reset</button>
+            </div>
+          </mat-step>
+        </mat-vertical-stepper>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
