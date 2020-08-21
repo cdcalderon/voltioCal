@@ -28,6 +28,13 @@ export const AppRoutes: Routes = [
         path: 'proposal',
         loadChildren: () =>
           import('./proposals/proposals.module').then(m => m.ProposalsModule)
+      },
+      {
+        path: 'calculators',
+        loadChildren: () =>
+          import('./calculators/calculators.module').then(
+            m => m.CalculatorsModule
+          )
       }
     ]
   }

@@ -44,6 +44,12 @@ const MENUITEMS = [
     icon: 'description'
   },
   {
+    state: 'calculators',
+    name: 'Calculators',
+    type: 'link',
+    icon: 'description'
+  },
+  {
     state: 'material',
     name: 'Material',
     type: 'sub',
