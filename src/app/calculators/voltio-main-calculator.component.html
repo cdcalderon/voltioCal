@@ -1,1 +1,765 @@
-<p>voltio-main-calculator works!</p>
+<div fxLayout="row wrap">
+  <div fxFlex.gt-sm="100" fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <mat-card-title>System Builder</mat-card-title>
+        <!-- ============================================================== -->
+        <!-- column -->
+        <!-- ============================================================== -->
+        <form class="basic-form">
+          <div fxLayout="row wrap" fxFlexAlign="center" class="row">
+            <!-- column -->
+            <div fxFlex.gt-sm="25" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <input matInput placeholder="Utility Payment" />
+              </mat-form-field>
+            </div>
+            <!-- column -->
+            <div fxFlex.gt-sm="25" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <input matInput placeholder="Utility / Kw rate" />
+              </mat-form-field>
+            </div>
+            <!-- column -->
+            <div fxFlex.gt-sm="25" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <input matInput placeholder="Energy Production Watts" />
+              </mat-form-field>
+            </div>
+            <div fxFlex.gt-sm="25" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <input matInput placeholder="Panel Wattage" />
+              </mat-form-field>
+            </div>
+          </div>
+        </form>
+        <div fxLayout="row wrap">
+          <!-- column -->
+          <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+            <a href="javascript:void">
+              <mat-card class="bg-info text-white text-center">
+                <div class="p-10">
+                  <h2 class="m-0">2064</h2>
+                  <small>Needed Yr Production</small>
+                </div>
+              </mat-card>
+            </a>
+          </div>
+          <!-- column -->
+          <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+            <a href="javascript:void">
+              <mat-card class="bg-purple text-white text-center">
+                <div class="p-10">
+                  <h2 class="m-0">1,738</h2>
+                  <small># of Panels</small>
+                </div>
+              </mat-card>
+            </a>
+          </div>
+          <!-- column -->
+          <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+            <a href="javascript:void">
+              <mat-card class="bg-success text-white text-center">
+                <div class="p-10">
+                  <h2 class="m-0">5693</h2>
+                  <small>System Size</small>
+                </div>
+              </mat-card>
+            </a>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<div fxLayout="row wrap">
+  <div fxFlex.gt-sm="100" fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <mat-card-title>System Builder</mat-card-title>
+        <mat-card-subtitle
+          >Calculadora <code>test</code> description instructions goes here
+          <code>test</code> hgdgdg</mat-card-subtitle
+        >
+        <!-- ============================================================== -->
+        <!-- column -->
+        <!-- ============================================================== -->
+        <form class="basic-form">
+          <div fxLayout="row wrap" fxFlexAlign="center" class="row">
+            <!-- column -->
+            <div fxFlex.gt-sm="25" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <mat-select placeholder="Location">
+                  <mat-option
+                    *ngFor="let location of locations"
+                    [value]="location"
+                  >
+                    {{ location }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <!-- column -->
+            <div fxFlex.gt-sm="25" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <mat-select placeholder="Lender">
+                  <mat-option *ngFor="let lender of lenders" [value]="lender">
+                    {{ lender }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <!-- column -->
+            <div fxFlex.gt-sm="25" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <mat-select placeholder="MGR/Trainer CMS">
+                  <mat-option *ngFor="let cms of cms" [value]="lender">
+                    {{ cms }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div fxFlex.gt-sm="25" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <mat-select placeholder="Split Commission">
+                  <mat-option
+                    *ngFor="let commision of commisionTypes"
+                    [value]="lender"
+                  >
+                    {{ commision }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <input matInput placeholder="Bonus PPW" />
+              </mat-form-field>
+            </div>
+            <!-- column -->
+            <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <input matInput placeholder="System Size" />
+              </mat-form-field>
+            </div>
+            <div fxFlex.gt-sm="16.66" fxFlex="100" class="p-10 adder">
+              <mat-checkbox class="example-margin">LEDs 24 pack</mat-checkbox>
+              <div fxLayout="row wrap" fxFlexAlign="center" class="row">
+                <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+                  <mat-form-field class="text-center">
+                    <input matInput placeholder="$" />
+                  </mat-form-field>
+                </div>
+                <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+                  <mat-form-field class="text-center">
+                    <input matInput placeholder="qty" />
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div fxFlex.gt-sm="16.66" fxFlex="100" class="p-10 adder">
+              <mat-checkbox class="example-margin">Thermostats</mat-checkbox>
+              <div fxLayout="row wrap" fxFlexAlign="center" class="row">
+                <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+                  <mat-form-field class="text-center">
+                    <input matInput placeholder="$" />
+                  </mat-form-field>
+                </div>
+                <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+                  <mat-form-field class="text-center">
+                    <input matInput placeholder="qty" />
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div fxFlex.gt-sm="16.66" fxFlex="100" class="p-10 adder">
+              <mat-checkbox class="example-margin">Voltiobox</mat-checkbox>
+              <div fxLayout="row wrap" fxFlexAlign="center" class="row">
+                <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+                  <mat-form-field class="text-center">
+                    <input matInput placeholder="$" />
+                  </mat-form-field>
+                </div>
+                <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+                  <mat-form-field class="text-center">
+                    <input matInput placeholder="qty" />
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div fxFlex.gt-sm="16.66" fxFlex="100" class="p-10 adder">
+              <mat-checkbox class="example-margin">Voltio wash</mat-checkbox>
+              <div fxLayout="row wrap" fxFlexAlign="center" class="row">
+                <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+                  <mat-form-field class="text-center">
+                    <input matInput placeholder="$" />
+                  </mat-form-field>
+                </div>
+                <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+                  <mat-form-field class="text-center">
+                    <input matInput placeholder="qty" />
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div fxFlex.gt-sm="16.66" fxFlex="100" class="p-10 adder">
+              <mat-checkbox class="example-margin">MPU</mat-checkbox>
+              <div fxLayout="row wrap" fxFlexAlign="center" class="row">
+                <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+                  <mat-form-field class="text-center">
+                    <input matInput placeholder="$" />
+                  </mat-form-field>
+                </div>
+                <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+                  <mat-form-field class="text-center">
+                    <input matInput placeholder="qty" />
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div fxFlex.gt-sm="16.66" fxFlex="100" class="p-10 adder">
+              <mat-checkbox class="example-margin">Aeroseal</mat-checkbox>
+              <div fxLayout="row wrap" fxFlexAlign="center" class="row">
+                <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+                  <mat-form-field class="text-center">
+                    <input matInput placeholder="$" />
+                  </mat-form-field>
+                </div>
+                <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+                  <mat-form-field class="text-center">
+                    <input matInput placeholder="qty" />
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div fxFlex.gt-sm="16.66" fxFlex="100" class="p-10 adder">
+              <mat-checkbox class="example-margin">EE Windows </mat-checkbox>
+              <div fxLayout="row wrap" fxFlexAlign="center" class="row">
+                <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+                  <mat-form-field class="text-center">
+                    <input matInput placeholder="$" />
+                  </mat-form-field>
+                </div>
+                <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+                  <mat-form-field class="text-center">
+                    <input matInput placeholder="qty" />
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div fxFlex.gt-sm="16.66" fxFlex="100" class="p-10 adder">
+              <mat-checkbox class="example-margin"
+                >Insulation sq ft</mat-checkbox
+              >
+              <div fxLayout="row wrap" fxFlexAlign="center" class="row">
+                <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+                  <mat-form-field class="text-center">
+                    <input matInput placeholder="$" />
+                  </mat-form-field>
+                </div>
+                <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+                  <mat-form-field class="text-center">
+                    <input matInput placeholder="qty" />
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div fxFlex.gt-sm="16.66" fxFlex="100" class="p-10 adder">
+              <mat-checkbox class="example-margin">Roofing</mat-checkbox>
+              <div fxLayout="row wrap" fxFlexAlign="center" class="row">
+                <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+                  <mat-form-field class="text-center">
+                    <input matInput placeholder="$" />
+                  </mat-form-field>
+                </div>
+                <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+                  <mat-form-field class="text-center">
+                    <input matInput placeholder="qty" />
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div fxFlex.gt-sm="16.66" fxFlex="100" class="p-10 adder">
+              <mat-checkbox class="example-margin">HVAC Unit</mat-checkbox>
+              <div fxLayout="row wrap" fxFlexAlign="center" class="row">
+                <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+                  <mat-form-field class="text-center">
+                    <input matInput placeholder="$" />
+                  </mat-form-field>
+                </div>
+                <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+                  <mat-form-field class="text-center">
+                    <input matInput placeholder="qty" />
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div fxFlex.gt-sm="16.66" fxFlex="100" class="p-10 adder">
+              <mat-checkbox class="example-margin">Small Sys Fee</mat-checkbox>
+              <div fxLayout="row wrap" fxFlexAlign="center" class="row">
+                <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+                  <mat-form-field class="text-center">
+                    <input matInput placeholder="$" />
+                  </mat-form-field>
+                </div>
+                <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+                  <mat-form-field class="text-center">
+                    <input matInput placeholder="qty" />
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<div fxLayout="row wrap">
+  <div fxFlex.gt-sm="100" fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <mat-card-title>PPW Information</mat-card-title>
+        <mat-card-subtitle
+          >Calculadora <code>test</code> description instructions goes here
+          <code>test</code> hgdgdg</mat-card-subtitle
+        >
+        <div fxLayout="row wrap">
+          <!-- column -->
+          <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <a href="javascript:void">
+              <mat-card class="bg-info text-white text-center">
+                <div class="p-10">
+                  <h2 class="m-0">2064</h2>
+                  <small>System Size w/adders</small>
+                </div>
+              </mat-card>
+            </a>
+          </div>
+          <!-- column -->
+          <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <a href="javascript:void">
+              <mat-card class="bg-purple text-white text-center">
+                <div class="p-10">
+                  <h2 class="m-0">11,738</h2>
+                  <small>System Price No Adders</small>
+                </div>
+              </mat-card>
+            </a>
+          </div>
+          <!-- column -->
+          <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <a href="javascript:void">
+              <mat-card class="bg-success text-white text-center">
+                <div class="p-10">
+                  <h2 class="m-0">5693</h2>
+                  <small>Current PPW</small>
+                </div>
+              </mat-card>
+            </a>
+          </div>
+          <!-- column -->
+          <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <a href="javascript:void">
+              <mat-card class="bg-inverse text-white text-center">
+                <div class="p-10">
+                  <h2 class="m-0">2.9s</h2>
+                  <small>Adder+Dealer Fee</small>
+                </div>
+              </mat-card>
+            </a>
+          </div>
+        </div>
+
+        <div fxLayout="row wrap">
+          <!-- column -->
+          <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <a href="javascript:void">
+              <mat-card class="bg-info text-white text-center">
+                <div class="p-10">
+                  <h2 class="m-0">2064</h2>
+                  <small>Tax Credit</small>
+                </div>
+              </mat-card>
+            </a>
+          </div>
+          <!-- column -->
+          <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <a href="javascript:void">
+              <mat-card class="bg-purple text-white text-center">
+                <div class="p-10">
+                  <h2 class="m-0">11,738</h2>
+                  <small>Loan After Tax Credit</small>
+                </div>
+              </mat-card>
+            </a>
+          </div>
+          <!-- column -->
+          <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <a href="javascript:void">
+              <mat-card class="bg-success text-white text-center">
+                <div class="p-10">
+                  <h2 class="m-0">5693</h2>
+                  <small>Redline</small>
+                </div>
+              </mat-card>
+            </a>
+          </div>
+          <!-- column -->
+          <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <a href="javascript:void">
+              <mat-card class="bg-inverse text-white text-center">
+                <div class="p-10">
+                  <h2 class="m-0">2.9s</h2>
+                  <small>System Price W Adders</small>
+                </div>
+              </mat-card>
+            </a>
+          </div>
+        </div>
+
+        <div fxLayout="row wrap">
+          <!-- column -->
+          <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <a href="javascript:void">
+              <mat-card class="bg-info text-white text-center">
+                <div class="p-10">
+                  <h2 class="m-0">2064</h2>
+                  <small>New PPW w/adders</small>
+                </div>
+              </mat-card>
+            </a>
+          </div>
+          <!-- column -->
+          <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <a href="javascript:void">
+              <mat-card class="bg-purple text-white text-center">
+                <div class="p-10">
+                  <h2 class="m-0">11,738</h2>
+                  <small>Net PPW</small>
+                </div>
+              </mat-card>
+            </a>
+          </div>
+          <!-- column -->
+          <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <a href="javascript:void">
+              <mat-card class="bg-success text-white text-center">
+                <div class="p-10">
+                  <h2 class="m-0">5693</h2>
+                  <small>Tax Credit %</small>
+                </div>
+              </mat-card>
+            </a>
+          </div>
+          <!-- column -->
+          <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <a href="javascript:void">
+              <mat-card class="bg-inverse text-white text-center">
+                <div class="p-10">
+                  <h2 class="m-0">2.9s</h2>
+                  <small>Payout PPW</small>
+                </div>
+              </mat-card>
+            </a>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<div fxLayout="row wrap">
+  <div fxFlex.gt-sm="100" fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <mat-card-title>Lender</mat-card-title>
+        <mat-card-subtitle>LP 25yr 2.99 22.05%</mat-card-subtitle>
+        <div fxLayout="row wrap">
+          <!-- column -->
+          <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <a href="javascript:void">
+              <mat-card class="bg-info text-white text-center">
+                <div class="p-10">
+                  <h2 class="m-0">2064</h2>
+                  <small>Term months</small>
+                </div>
+              </mat-card>
+            </a>
+          </div>
+          <!-- column -->
+          <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <a href="javascript:void">
+              <mat-card class="bg-purple text-white text-center">
+                <div class="p-10">
+                  <h2 class="m-0">11,738</h2>
+                  <small>Interest</small>
+                </div>
+              </mat-card>
+            </a>
+          </div>
+          <!-- column -->
+          <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <a href="javascript:void">
+              <mat-card class="bg-success text-white text-center">
+                <div class="p-10">
+                  <h2 class="m-0">5693</h2>
+                  <small>Fee</small>
+                </div>
+              </mat-card>
+            </a>
+          </div>
+          <!-- column -->
+          <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <a href="javascript:void">
+              <mat-card class="bg-inverse text-white text-center">
+                <div class="p-10">
+                  <h2 class="m-0">2.9s</h2>
+                  <small>Dealer Fee Cost</small>
+                </div>
+              </mat-card>
+            </a>
+          </div>
+        </div>
+
+        <div fxLayout="row wrap">
+          <!-- column -->
+          <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <a href="javascript:void">
+              <mat-card class="bg-info text-white text-center">
+                <div class="p-10">
+                  <h2 class="m-0">2064</h2>
+                  <small>Monthly Payment</small>
+                </div>
+              </mat-card>
+            </a>
+          </div>
+          <!-- column -->
+          <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <a href="javascript:void">
+              <mat-card class="bg-purple text-white text-center">
+                <div class="p-10">
+                  <h2 class="m-0">11,738</h2>
+                  <small>No Tax C. Payment</small>
+                </div>
+              </mat-card>
+            </a>
+          </div>
+          <!-- column -->
+          <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <a href="javascript:void">
+              <mat-card class="bg-success text-white text-center">
+                <div class="p-10">
+                  <h2 class="m-0">5693</h2>
+                  <small>4 Month Promo</small>
+                </div>
+              </mat-card>
+            </a>
+          </div>
+          <!-- column -->
+          <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+            <a href="javascript:void">
+              <mat-card class="bg-inverse text-white text-center">
+                <div class="p-10">
+                  <h2 class="m-0">2.9s</h2>
+                  <small>Admin Fee</small>
+                </div>
+              </mat-card>
+            </a>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<div fxLayout="row wrap">
+  <!-- column -->
+  <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <!-- column -->
+        <div class="stats">
+          <mat-card-title>MGR/Trainer CMS</mat-card-title>
+          <mat-card-subtitle>Elite Payout 800</mat-card-subtitle>
+
+          <div class="d-flex flex-row no-block">
+            <div class="p-10 p-l-0 b-r">
+              <div class="font-light">Commission/KW</div>
+              <b>80.40%</b>
+            </div>
+            <div class="p-10 b-r">
+              <div class="font-light">Total</div>
+              <b>20.40%</b>
+            </div>
+            <div class="p-10">
+              <div class="font-light">MP1</div>
+              <b>5.40%</b>
+            </div>
+            <div class="p-10">
+              <div class="font-light">MP2</div>
+              <b>5.40%</b>
+            </div>
+          </div>
+        </div>
+        <div class="sitea"></div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!-- column -->
+  <!-- column -->
+  <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <!-- column -->
+        <!-- column -->
+        <div class="stats">
+          <mat-card-title>Split Commission </mat-card-title>
+          <mat-card-subtitle>Trainee3 Payout 475</mat-card-subtitle>
+
+          <div class="d-flex flex-row no-block">
+            <div class="p-10 p-l-0 b-r">
+              <div class="font-light">Commission/KW</div>
+              <b>80.40%</b>
+            </div>
+            <div class="p-10 b-r">
+              <div class="font-light">Total</div>
+              <b>20.40%</b>
+            </div>
+            <div class="p-10">
+              <div class="font-light">MP1</div>
+              <b>5.40%</b>
+            </div>
+            <div class="p-10">
+              <div class="font-light">MP2</div>
+              <b>5.40%</b>
+            </div>
+          </div>
+        </div>
+        <div class="siteb"></div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!-- column -->
+  <!-- column -->
+  <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <!-- column -->
+        <div class="stats">
+          <mat-card-title>Split Commission </mat-card-title>
+          <mat-card-subtitle>Trainee3 Payout 475</mat-card-subtitle>
+
+          <div class="d-flex flex-row no-block">
+            <div class="p-10 p-l-0 b-r">
+              <div class="font-light">Commission/KW</div>
+              <b>80.40%</b>
+            </div>
+            <div class="p-10 b-r">
+              <div class="font-light">Total</div>
+              <b>20.40%</b>
+            </div>
+            <div class="p-10">
+              <div class="font-light">MP1</div>
+              <b>5.40%</b>
+            </div>
+            <div class="p-10">
+              <div class="font-light">MP2</div>
+              <b>5.40%</b>
+            </div>
+          </div>
+        </div>
+        <div class="sitec"></div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!-- column -->
+
+  <!-- column -->
+</div>
+
+<div fxLayout="row wrap">
+  <!-- column -->
+  <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <!-- column -->
+        <div class="stats">
+          <mat-card-title>TOTAL Payout</mat-card-title>
+          <mat-card-subtitle>32323</mat-card-subtitle>
+
+          <div class="d-flex flex-row no-block">
+            <div class="p-10 p-l-0 b-r">
+              <div class="font-light">MP1</div>
+              <b>80.40%</b>
+            </div>
+            <div class="p-10 b-r">
+              <div class="font-light">MP2</div>
+              <b>20.40%</b>
+            </div>
+          </div>
+        </div>
+        <div class="sitea"></div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!-- column -->
+  <!-- column -->
+  <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <!-- column -->
+        <!-- column -->
+        <div class="stats">
+          <mat-card-title>Voltio Payout</mat-card-title>
+          <mat-card-subtitle>32323</mat-card-subtitle>
+
+          <div class="d-flex flex-row no-block">
+            <div class="p-10 p-l-0 b-r">
+              <div class="font-light">MP1</div>
+              <b>80.40%</b>
+            </div>
+            <div class="p-10 b-r">
+              <div class="font-light">MP2</div>
+              <b>20.40%</b>
+            </div>
+          </div>
+        </div>
+        <div class="siteb"></div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!-- column -->
+  <!-- column -->
+  <div fxFlex.gt-sm="33.33" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <!-- column -->
+        <div class="stats">
+          <mat-card-title>Bonus</mat-card-title>
+          <mat-card-subtitle>Commission Information</mat-card-subtitle>
+          <div class="d-flex flex-row no-block">
+            <div class="p-10 p-l-0 b-r">
+              <div class="font-light">Breakdown</div>
+              <b>80.40%</b>
+            </div>
+            <div class="p-10 b-r">
+              <div class="font-light">.55 Volt</div>
+              <b>20.40%</b>
+            </div>
+            <div class="p-10">
+              <div class="font-light">.45 Rep</div>
+              <b>5.40%</b>
+            </div>
+          </div>
+        </div>
+        <div class="sitec"></div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!-- column -->
+
+  <!-- column -->
+</div>
