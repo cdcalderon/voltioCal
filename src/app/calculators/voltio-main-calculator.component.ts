@@ -77,13 +77,6 @@ export class VoltioMainCalculatorComponent implements OnInit {
   fittyFiveBreakdown = 0.55;
   constructor() {}
 
-  get trainerCalculatedCommission(): number {
-    return (
-      this.selectedTrainerCms.commisionPerWatt -
-      this.selectedTraineeCms.commisionPerWatt
-    );
-  }
-
   get systemSizeWithAdders(): number {
     return 9000;
   }
@@ -92,8 +85,15 @@ export class VoltioMainCalculatorComponent implements OnInit {
     return this.bonusPPW * this.fittyFiveBreakdown;
   }
 
+  get trainerCalculatedCommission(): number {
+    return (
+      this.selectedTrainerCms.commisionPerWatt -
+      this.selectedTraineeCms.commisionPerWatt
+    );
+  }
+
   get trainerPricePerKiloWatt(): number {
-    return this.selectedTrainerCms.commisionPerWatt / 1000;
+    return this.trainerCalculatedCommission / 1000;
   }
 
   get TotalTrainerCalculatedCommission(): number {
@@ -101,6 +101,46 @@ export class VoltioMainCalculatorComponent implements OnInit {
       this.systemSizeWithAdders * this.trainerPricePerKiloWatt +
       this.bonusCms55 / 2 -
       this.adminFee
+    );
+  }
+
+  get trainerMp1(): number {
+    return (
+      this.TotalTrainerCalculatedCommission * this.selectedTrainerCms.mp1Percent
+    );
+  }
+
+  get trainerMp2(): number {
+    return (
+      this.TotalTrainerCalculatedCommission * this.selectedTrainerCms.mp2Percent
+    );
+  }
+
+  get traineeCalculatedCommission(): number {
+    return this.selectedTraineeCms.commisionPerWatt;
+  }
+
+  get traineePricePerKiloWatt(): number {
+    return this.traineeCalculatedCommission / 1000;
+  }
+
+  get TotalTraineeCalculatedCommission(): number {
+    return (
+      this.systemSizeWithAdders * this.traineePricePerKiloWatt +
+      this.bonusCms55 / 2 -
+      this.adminFee
+    );
+  }
+
+  get traineeMp1(): number {
+    return (
+      this.TotalTraineeCalculatedCommission * this.selectedTraineeCms.mp1Percent
+    );
+  }
+
+  get traineeMp2(): number {
+    return (
+      this.TotalTraineeCalculatedCommission * this.selectedTraineeCms.mp2Percent
     );
   }
 
