@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { VoltioLocation } from './models/location.model';
 import { Lender } from './models/lender.model';
-import { TrainerCms } from './models/trainer-cms.model';
+import { RepCms } from './models/rep-cms.model';
+import { RepCmsValue } from './models/rep-cms-value.model';
 
 @Component({
   selector: 'app-voltio-main-calculator',
@@ -25,33 +26,83 @@ export class VoltioMainCalculatorComponent implements OnInit {
       viewValue: 'LP 25yr 2.99 22.05%'
     }
   ];
-  trainerCms: TrainerCms[] = [
+  trainerCms: RepCms[] = [
     {
-      value: { commisionPerWatt: 800, description: 'Elite  Payout 800' },
+      value: {
+        commisionPerWatt: 800,
+        description: 'Elite  Payout 800',
+        mp1Percent: 0.3,
+        mp2Percent: 0.7
+      },
       viewValue: 'Elite  Payout 800'
     },
     {
-      value: { commisionPerWatt: 900, description: 'Specialist Payout 900' },
+      value: {
+        commisionPerWatt: 900,
+        description: 'Specialist Payout 900',
+        mp1Percent: 0.3,
+        mp2Percent: 0.7
+      },
       viewValue: 'Specialist Payout 900'
     }
   ];
-  traineeCms: TrainerCms[] = [
+  traineeCms: RepCms[] = [
     {
-      value: { commisionPerWatt: 475, description: 'Trainee3 Payout 475' },
+      value: {
+        commisionPerWatt: 475,
+        description: 'Trainee3 Payout 475',
+        mp1Percent: 0.5,
+        mp2Percent: 0.5
+      },
       viewValue: 'Trainee3 Payout 475'
     },
     {
-      value: { commisionPerWatt: 400, description: 'Trainee3 Payout 400' },
+      value: {
+        commisionPerWatt: 400,
+        description: 'Trainee3 Payout 400',
+        mp1Percent: 0.5,
+        mp2Percent: 0.5
+      },
       viewValue: 'Trainee3 Payout 400'
     }
   ];
   commisionTypes: string[] = ['Texas', 'Nevada'];
   selectedLocation = this.locations[0].value;
   selectedLender = this.lenders[1].value;
-  selectedTrainerCms = this.trainerCms[0].value;
-  selectedTraineeCms = this.traineeCms[0].value;
+  selectedTrainerCms: RepCmsValue = this.trainerCms[0].value;
+  selectedTraineeCms: RepCmsValue = this.traineeCms[0].value;
+  bonusPPW = 0;
+  adminFee = 150;
   panelOpenState = false;
+  fittyFiveBreakdown = 0.55;
   constructor() {}
+
+  get trainerCalculatedCommission(): number {
+    return (
+      this.selectedTrainerCms.commisionPerWatt -
+      this.selectedTraineeCms.commisionPerWatt
+    );
+  }
+
+  get systemSizeWithAdders(): number {
+    return 9000;
+  }
+
+  get bonusCms55(): number {
+    return this.bonusPPW * this.fittyFiveBreakdown;
+  }
+
+  get trainerPricePerKiloWatt(): number {
+    return this.selectedTrainerCms.commisionPerWatt / 1000;
+  }
+
+  get TotalTrainerCalculatedCommission(): number {
+    return (
+      this.systemSizeWithAdders * this.trainerPricePerKiloWatt +
+      this.bonusCms55 / 2 -
+      this.adminFee
+    );
+  }
 
   ngOnInit(): void {}
 }
