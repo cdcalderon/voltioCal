@@ -78,12 +78,11 @@
     <mat-card>
       <mat-card-content class="m-b-0">
         <mat-card-title>System Builder</mat-card-title>
-        <mat-card-subtitle
+        <!-- <mat-card-subtitle
           >Calculadora <code>test</code> description instructions goes here
           <code>test</code> hgdgdg</mat-card-subtitle
-        >
-        location ppw: {{ selectedLocation.ppw }} - redline
-        {{ selectedLocation.redline }}
+        > -->
+    
         <!-- ============================================================== -->
         <!-- column -->
         <!-- ============================================================== -->
@@ -357,10 +356,10 @@
     <mat-card>
       <mat-card-content>
         <mat-card-title>PPW Information</mat-card-title>
-        <mat-card-subtitle
+        <!-- <mat-card-subtitle
           >Calculadora <code>test</code> description instructions goes here
           <code>test</code> hgdgdg</mat-card-subtitle
-        >
+        > -->
         <div fxLayout="row wrap">
           <!-- column -->
           <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
@@ -551,7 +550,7 @@
             <a href="javascript:void">
               <mat-card class="bg-purple text-white text-center">
                 <div class="p-10">
-                  <h2 class="m-0">2.9s</h2>
+                  <h2 class="m-0">{{dealerFeeCost | number:'1.0-0'}}</h2>
                   <small>Dealer Fee Cost</small>
                 </div>
               </mat-card>

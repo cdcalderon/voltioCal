@@ -81,8 +81,16 @@ export class VoltioMainCalculatorComponent implements OnInit {
     return 9000;
   }
 
+  get systemPriceWithAdders(): number {
+    return 49904;
+  }
+
   get bonusCms55(): number {
     return this.bonusPPW * this.fittyFiveBreakdown;
+  }
+
+  get dealerFeeCost(): number {
+    return this.systemPriceWithAdders * (this.selectedLender.fee / 100);
   }
 
   get trainerCalculatedCommission(): number {
