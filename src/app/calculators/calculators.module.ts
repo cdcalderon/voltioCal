@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { DemoMaterialModule } from '../demo-material-module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
+import { CalculatorService } from './calculator.service';
 
 @NgModule({
   declarations: [VoltioMainCalculatorComponent],
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
     DemoMaterialModule,
     FlexLayoutModule,
     RouterModule.forChild(CalculatorRoutes)
-  ]
+  ],
+  providers: [CalculatorService]
 })
 export class CalculatorsModule {}
