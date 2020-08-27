@@ -3,5 +3,11 @@
         "activityBar.background": "#45251A",
         "titleBar.activeBackground": "#613425",
         "titleBar.activeForeground": "#FCF9F8"
-    }
+    },
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/0b5be4dc-8c6a-43ed-8d2a-60b16513d8ca/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/VoltioCalculator",
+    "appService.deploySubpath": ""
 }
