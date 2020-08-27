@@ -80,6 +80,11 @@ export class VoltioMainCalculatorComponent implements OnInit {
   fortyFiveBreakdown = 0.45;
   leds24Pack: Adder;
   thermostats: Adder;
+  voltioBox: Adder;
+  voltioWash: Adder;
+  mpu: Adder;
+  aeroseal: Adder;
+  eeWindows: Adder;
   adders: Adder[] = [];
   totalAdders = 0;
   totalAddersSystemReducer = 0;
@@ -90,7 +95,20 @@ export class VoltioMainCalculatorComponent implements OnInit {
     this.initialSystemSize = 9000;
     this.leds24Pack = calculatorSvc.getLeds24Pack();
     this.thermostats = calculatorSvc.getThermostats();
-    this.adders = [this.leds24Pack, this.thermostats];
+    this.voltioBox = calculatorSvc.getVoltioBox();
+    this.voltioWash = calculatorSvc.getVoltioWash();
+    this.mpu = calculatorSvc.getMPU();
+    this.aeroseal = calculatorSvc.getAeroseal();
+    this.eeWindows = calculatorSvc.getAeroseal();
+
+    this.adders = [
+      this.leds24Pack,
+      this.thermostats,
+      this.voltioBox,
+      this.voltioWash,
+      this.mpu,
+      this.eeWindows
+    ];
     this.aggregateAdders();
   }
 
@@ -103,11 +121,43 @@ export class VoltioMainCalculatorComponent implements OnInit {
   }
 
   get leds24PackTotal(): number {
-    return this.leds24Pack.quantity * this.leds24Pack.price;
+    return this.leds24Pack.isSelected
+      ? this.leds24Pack.quantity * this.leds24Pack.price
+      : 0;
   }
 
   get thermostatsTotal(): number {
-    return this.thermostats.quantity * this.thermostats.price;
+    return this.thermostats.isSelected
+      ? this.thermostats.quantity * this.thermostats.price
+      : 0;
+  }
+
+  get voltioBoxTotal(): number {
+    return this.voltioBox.isSelected
+      ? this.voltioBox.quantity * this.voltioBox.price
+      : 0;
+  }
+
+  get voltioWashTotal(): number {
+    return this.voltioWash.isSelected
+      ? this.voltioWash.quantity * this.voltioWash.price
+      : 0;
+  }
+
+  get mpuTotal(): number {
+    return this.mpu.isSelected ? this.mpu.quantity * this.mpu.price : 0;
+  }
+
+  get aerosealTotal(): number {
+    return this.aeroseal.isSelected
+      ? this.aeroseal.quantity * this.aeroseal.price
+      : 0;
+  }
+
+  get eeWindowsTotal(): number {
+    return this.eeWindows.isSelected
+      ? this.eeWindows.quantity * this.eeWindows.price
+      : 0;
   }
 
   get systemSizeWithAdders(): number {
