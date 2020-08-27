@@ -367,7 +367,7 @@ export class VoltioMainCalculatorComponent implements OnInit {
     futureValue: number,
     type: number
   ) {
-    if (ratePerPeriod != 0.0) {
+    if (ratePerPeriod !== 0.0) {
       // Interest rate exists
       const q = Math.pow(1 + ratePerPeriod, numberOfPayments);
       return (
